@@ -1,4 +1,4 @@
-package biblioAyawo.biblio;
+package metier.entites;
 
 public class BiblioException extends Exception {
 
