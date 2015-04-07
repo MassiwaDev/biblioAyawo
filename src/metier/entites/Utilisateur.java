@@ -1,10 +1,14 @@
 package metier.entites;
 
+import java.util.ArrayList;
+
 public class Utilisateur extends Personne {
 	
 	private int idUtilisateur;
 	private String pwd;
 	private String pseudonyme;
+	
+	private ArrayList <EmpruntEnCours> lesEmprunts;
 	
 	
 	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) {
@@ -49,6 +53,11 @@ public class Utilisateur extends Personne {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
+	}
+
+
+	public int getNbEmpruntsEnCours() {
+		return lesEmprunts.size();
 	}
 	
 	
