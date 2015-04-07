@@ -31,4 +31,6 @@ public class Adherent extends Utilisateur {
 		return 0;
 	}
 	
+
+	
 }
