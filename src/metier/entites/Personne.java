@@ -12,8 +12,6 @@ public class Personne {
 	
 	
 	
-	
-	
 	public String getNom() {
 		return nom;
 	}
@@ -36,6 +34,7 @@ public class Personne {
 		return sexe;
 	}
 	public void setSexe(String sexe) {
+		System.out.println("setSexe");
 		this.sexe = sexe;
 	}
 	
