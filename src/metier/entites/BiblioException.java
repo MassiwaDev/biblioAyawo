@@ -2,7 +2,7 @@ package metier.entites;
 
 public class BiblioException extends Exception {
 
-	
+	//Cette classe sert à gérer les exceptions
 	public BiblioException() {
 		super();
 

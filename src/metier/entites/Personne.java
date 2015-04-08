@@ -12,8 +12,6 @@ public class Personne {
 	
 	
 	
-	
-	
 	public String getNom() {
 		return nom;
 	}
@@ -36,6 +34,7 @@ public class Personne {
 		return sexe;
 	}
 	public void setSexe(String sexe) {
+		System.out.println("setSexe");
 		this.sexe = sexe;
 	}
 	
@@ -51,6 +50,7 @@ public class Personne {
 		result = prime * result + ((sexe == null) ? 0 : sexe.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
