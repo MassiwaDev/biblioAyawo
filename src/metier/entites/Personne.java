@@ -51,6 +51,7 @@ public class Personne {
 		result = prime * result + ((sexe == null) ? 0 : sexe.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
