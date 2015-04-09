@@ -1,5 +1,6 @@
 package metier.entites;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -9,7 +10,7 @@ public class EmpruntEnCours {
 
 	private Utilisateur emprunteur;
 	private Exemplaire exemplaire;
-	
+	public static final java.text.SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	
 	
@@ -56,7 +57,7 @@ public class EmpruntEnCours {
 	
 	@Override
 	public String toString() {
-		return getExemplaire()+" IL est actuellement emprunté par : "+emprunteur.getPrenom()+" "+emprunteur.getNom().toUpperCase()+" depuis le : " + getDateEmprunt() + ".";
+		return getExemplaire()+"\nIL est actuellement emprunté par : "+emprunteur.getPrenom()+" "+emprunteur.getNom().toUpperCase()+" depuis le : " + sdf.format(getDateEmprunt()) + ".";
 	}
 	
 	
