@@ -86,7 +86,7 @@ public class Utilisateur extends Personne {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString() + "\nidUtilisateur = " + idUtilisateur + "pseudonyme = " + pseudonyme;
+		return super.toString() + "\nidUtilisateur = " + idUtilisateur + ", pseudonyme = " + pseudonyme;
 	}
 
 

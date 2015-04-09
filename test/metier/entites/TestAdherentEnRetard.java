@@ -24,7 +24,7 @@ public class TestAdherentEnRetard {
 		EmpruntEnCours ep2;
 		
 		System.out.println();
-		System.out.println("début =============== Test ajout emprunt en retard ================");
+		System.out.println("début =============== Test ajout emprunt en retard ========================================");
 		
 		try {
 			ex1 = eDao.findByKey(1);	
@@ -37,8 +37,9 @@ public class TestAdherentEnRetard {
 
 			ad1.addEmpruntEnCours(ep1);
 			System.out.println();
-			System.out.println(ad1);
+			System.out.println(ep1);
 			System.out.println();
+
 		}
 		
 		catch(BiblioException ex) {
@@ -57,7 +58,7 @@ public class TestAdherentEnRetard {
 		
 
 
-		System.out.println("===================== Test ajout emprunt en retard ================ fin ");
+		System.out.println("===================== Test ajout emprunt en retard ======================================== fin ");
 	
 		
 		System.out.println();
@@ -67,7 +68,7 @@ public class TestAdherentEnRetard {
 		
 		
 		
-		System.out.println("début =============== Test tentative ajout d'un deuxième emprunt ================");
+		System.out.println("début =============== Test tentative ajout d'un deuxième emprunt ==========================");
 		
 		try {
 			ex2 = eDao.findByKey(2);
