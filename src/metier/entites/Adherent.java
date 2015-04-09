@@ -86,7 +86,7 @@ public class Adherent extends Utilisateur {
 	
 @Override
 	public String toString() {
-		return super.toString() + "\nAdherent [telephone=" + telephone + "]";
+		return super.toString() + "\nAdherent [telephone = " + ( (telephone == null) ? "numéro inconnu" : telephone)  + "]";
 	}
 
 @Override

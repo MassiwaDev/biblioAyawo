@@ -14,7 +14,7 @@ public class Personne {
 
 	
 	public Personne(String nom, String prenom) throws ParseException {	
-		this(nom, prenom, sdf.parse("01/01/0001"));
+		this(nom, prenom, sdf.parse("99/99/9999"));
 	}
 	
 	public Personne(String nom, String prenom, Date dateNaissance) {	
@@ -108,8 +108,8 @@ public class Personne {
 	
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + ", prenom=" + prenom
-				+ ", dateNaissance=" + dateNaissance + ", sexe=" + sexe + "]";
+		return "Personne [nom = " + nom + ", prenom = " + prenom
+				+ ", dateNaissance = " + ( (dateNaissance == null) ? "inconnue": sdf.format(dateNaissance)) + ", sexe = " + sexe + "]";
 	}
 	
 	
