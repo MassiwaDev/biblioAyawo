@@ -1,6 +1,11 @@
 package metier.entites;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+
+
 
 public class Adherent extends Utilisateur {
 
@@ -20,15 +25,56 @@ public class Adherent extends Utilisateur {
 		this.telephone = telephone;
 	}
 
+	public boolean isPretEnRetard(EmpruntEnCours emprunt){
+		
+		boolean isPretEnRetard = false;
+		
+		Date dateEmprunt = emprunt.getDateEmprunt();
+		
+		GregorianCalendar dateGC  = new  GregorianCalendar();
+		dateGC.setTime(new Date());
+		
+		dateGC.add(Calendar.DAY_OF_YEAR, -dureeMaxPret); 
+		
+		Date dateMinSansretard = dateGC.getTime();
+		if (dateMinSansretard.after(dateEmprunt)){
+			
+			isPretEnRetard = true;
+		}
+		
+		return isPretEnRetard; 
+	}
+	
 	public boolean isConditionsPretAcceptees(){
 		
-		// A developper
-		return true;
+		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
+
+		/* Règle de gestion nombre de prêts < 3 */
+
+		boolean isNbPretseq3 = false;
+		
+		if (emprunts.size() == 3) {
+			isNbPretseq3= true;
+		}
+		/* Règle de gestion prêt en retard */
+		
+		int nbPretsEnRetard = getNbRetards();
+
+		return (!isNbPretseq3 & (nbPretsEnRetard==0));
 	}
 	
 	public int getNbRetards(){
-		// A developper
-		return 0;
+
+		int nb = 0;
+		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
+
+		for (EmpruntEnCours emprunt : emprunts){
+				Exemplaire exemplaire = emprunt.getExemplaire();
+				if (isPretEnRetard(emprunt))
+					nb += 1;
+
+		}
+		return nb;
 	}
 	
 

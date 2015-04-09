@@ -9,7 +9,17 @@ public class Utilisateur extends Personne {
 	private String pwd;
 	private String pseudonyme;
 	
-	private ArrayList <EmpruntEnCours> lesEmprunts;
+	public ArrayList<EmpruntEnCours> getEmpruntEnCours() {
+		return empruntEnCours;
+	}
+
+
+	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours) {
+		this.empruntEnCours = empruntEnCours;
+	}
+
+
+	private ArrayList <EmpruntEnCours> empruntEnCours;
 	
 	
 	public Utilisateur(String nom, String prenom, Date dateNaissance, String sexe, int idUtilisateur, String pwd, String pseudonyme) {
@@ -58,7 +68,7 @@ public class Utilisateur extends Personne {
 
 
 	public int getNbEmpruntsEnCours() {
-		return lesEmprunts.size();
+		return empruntEnCours.size();
 	}
 	
 	
