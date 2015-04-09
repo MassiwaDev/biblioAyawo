@@ -86,7 +86,7 @@ public class Utilisateur extends Personne {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString() + "idUtilisateur = " + idUtilisateur + "pseudonyme = " + pseudonyme;
+		return super.toString() + "\nidUtilisateur = " + idUtilisateur + "pseudonyme = " + pseudonyme;
 	}
 
 
@@ -101,9 +101,11 @@ public class Utilisateur extends Personne {
 		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
 		if ( emprunts == null){
 			emprunts = new ArrayList<EmpruntEnCours>();
-			
+			emprunts.add(e);
+			setEmpruntEnCours(emprunts);
+		} else {
+			emprunts.add(e);
 		}
-		emprunts.add(e);
 
 	}
 	

@@ -26,7 +26,7 @@ public class Adherent extends Utilisateur {
 	}
 
 	public boolean isPretEnRetard(EmpruntEnCours emprunt){
-		
+
 		boolean isPretEnRetard = false;
 		
 		Date dateEmprunt = emprunt.getDateEmprunt();
@@ -37,6 +37,7 @@ public class Adherent extends Utilisateur {
 		dateGC.add(Calendar.DAY_OF_YEAR, -dureeMaxPret); 
 		
 		Date dateMinSansretard = dateGC.getTime();
+		
 		if (dateMinSansretard.after(dateEmprunt)){
 			
 			isPretEnRetard = true;
@@ -71,18 +72,21 @@ public class Adherent extends Utilisateur {
 		int nb = 0;
 		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
 
-		for (EmpruntEnCours emprunt : emprunts){
-				Exemplaire exemplaire = emprunt.getExemplaire();
+		if (!(emprunts==null)) {
+			for (EmpruntEnCours emprunt : emprunts){
 				if (isPretEnRetard(emprunt))
 					nb += 1;
 
+			}		
 		}
+		
+
 		return nb;
 	}
 	
 @Override
 	public String toString() {
-		return super.toString() + " Adherent [telephone=" + telephone + "]";
+		return super.toString() + "\nAdherent [telephone=" + telephone + "]";
 	}
 
 @Override
