@@ -56,7 +56,7 @@ public class EmpruntEnCours {
 	
 	@Override
 	public String toString() {
-		return "L'exemplaire : "+getExemplaire()+" est actuellement emprunté par : "+getEmprunteur()+" depuis le : " + getDateEmprunt() + ".";
+		return getExemplaire()+" IL est actuellement emprunté par : "+emprunteur.getPrenom()+" "+emprunteur.getNom().toUpperCase()+" depuis le : " + getDateEmprunt() + ".";
 	}
 	
 	
