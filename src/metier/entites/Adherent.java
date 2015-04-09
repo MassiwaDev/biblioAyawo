@@ -78,6 +78,11 @@ public class Adherent extends Utilisateur {
 	}
 	
 @Override
+	public String toString() {
+		return super.toString() + " Adherent [telephone=" + telephone + "]";
+	}
+
+@Override
 public void addEmpruntEnCours(EmpruntEnCours e) throws BiblioException {
 	if (isConditionsPretAcceptees()) {
 		super.addEmpruntEnCours(e);		
