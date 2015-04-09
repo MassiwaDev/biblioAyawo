@@ -30,6 +30,10 @@ public class ExemplairesDao {
 		return listExemplaires.size();
 	}
 	
+	public int getNext(){
+		return getIndexOflist() + 1;
+	}
+	
 	public void insert(Exemplaire ex){
 		listExemplaires.add(ex);
 	}
