@@ -41,6 +41,7 @@ public class UtilisateursDao {
 		return listUtilisateurs;
 	}
 	
+	//liste des employés
 	public List<Employe> findAllEmployes(){
 		ArrayList<Employe> employes = new ArrayList<Employe>();
 		
@@ -53,6 +54,7 @@ public class UtilisateursDao {
 		
 	}
 	
+	//liste des adherents
 	public List<Adherent> findAllAdherents(){
 		ArrayList<Adherent> adherents = new ArrayList<Adherent>();
 		
