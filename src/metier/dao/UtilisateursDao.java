@@ -25,7 +25,7 @@ public class UtilisateursDao {
 		listUtilisateurs.add(new Adherent("Leroy", "Merlin", new Date(), "M", 4, "merlin", "merlin@leroy"));
 		listUtilisateurs.add(new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier"));
 		listUtilisateurs.add(new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint"));	
-		listUtilisateurs.add(new Adherent("LaMontagne", "Collette", new Date(), "M", 7, "collette", "collette@lamontagne"));
+		listUtilisateurs.add(new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne"));
 	}
 	
 	public Utilisateur findByKey(Integer id) throws BiblioException{
