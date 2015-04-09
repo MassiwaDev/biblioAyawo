@@ -1,5 +1,6 @@
 package metier.entites;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Exemplaire {
@@ -8,7 +9,7 @@ public class Exemplaire {
 	private Date dateAchat;
 	private EnumStatusExemplaire status;
 	private String isbn;
-	
+	public static final java.text.SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private EmpruntEnCours empruntEnCours;
 
@@ -89,8 +90,8 @@ public class Exemplaire {
 
 	@Override
 	public String toString() {
-		return "Il s'agit de l'exemplaire : "+getTitre()+", idExemplaire :" + getIdExemplaire() + ", sa date d'achat est :"
-				+ getDateAchat() + " son statut est : " + getStatus() + ", son isbn est :" + getIsbn()
+		return "Il s'agit de l'exemplaire : "+getTitre()+", idExemplaire :" + getIdExemplaire() + "\nsa date d'achat est :"
+				+ sdf.format(getDateAchat()) + "\nson statut est : " + getStatus() + "\nson isbn est :" + getIsbn()
 				+".";
 	}
 	
