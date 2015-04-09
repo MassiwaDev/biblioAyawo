@@ -53,9 +53,12 @@ public class Adherent extends Utilisateur {
 
 		boolean isNbPretseq3 = false;
 		
-		if (emprunts.size() == 3) {
-			isNbPretseq3= true;
+		if (!(emprunts==null)) {
+			if (emprunts.size() == 3) {
+				isNbPretseq3= true;
+			}			
 		}
+
 		/* Règle de gestion prêt en retard */
 		
 		int nbPretsEnRetard = getNbRetards();
@@ -94,9 +97,13 @@ public void addEmpruntEnCours(EmpruntEnCours e) throws BiblioException {
 			  
 		  } else {
 				ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
-				if (emprunts.size() == 3) {
-					throw new BiblioException("Emprunt refusé au motif que l'adhérent a emprunté le maximum de livres autorisés (3)");
+				
+				if (!(emprunts==null)) {
+					if (emprunts.size() == 3) {
+						throw new BiblioException("Emprunt refusé au motif que l'adhérent a emprunté le maximum de livres autorisés (3)");
+					}			
 				}
+
 		  }
 		  
 		  
