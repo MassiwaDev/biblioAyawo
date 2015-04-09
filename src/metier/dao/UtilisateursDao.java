@@ -20,13 +20,14 @@ public class UtilisateursDao {
 	}
 
 	private void initListe(){
+
 		utilisateurDB[0] = new Employe("Durand", "Paul", new Date(), "M", 1, "paul", "paul@durand");		
 		utilisateurDB[1] = new Employe("Duffour", "Pauline", new Date(), "F", 2, "pauline", "pauline@duffour");
-		utilisateurDB[2] = new Adherent("Ali", "Mohamed", new Date(), "M", 3, "mohamed", "mohamed@ali");
-		utilisateurDB[3] = new Adherent("Leroy", "Merlin", new Date(), "M", 4, "merlin", "merlin@leroy");
-		utilisateurDB[4] = new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier");
-		utilisateurDB[5] = new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint");	
-		utilisateurDB[6] = new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne");
+		utilisateurDB[2] = new Adherent("Ali", "Mohamed", new Date(), "M", 3, "mohamed", "mohamed@ali", "0611224455");
+		utilisateurDB[3] = new Adherent("Leroy", "Merlin", new Date(), "M", 4, "merlin", "merlin@leroy", "0611224455");
+		utilisateurDB[4] = new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier", "0611224455");
+		utilisateurDB[5] = new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint", "0611224455");	
+		utilisateurDB[6] = new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne", "0611224455");
 	}
 	
 	public Utilisateur findByKey(Integer id) throws BiblioException{
