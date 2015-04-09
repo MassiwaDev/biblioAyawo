@@ -12,24 +12,25 @@ import metier.entites.Utilisateur;
 
 public class UtilisateursDao {
 	
-	private List <Utilisateur> listUtilisateurs = new ArrayList<Utilisateur>();
+	//private List <Utilisateur> listUtilisateurs = new ArrayList<Utilisateur>();
+	private Utilisateur [] utilisateurDB = new Utilisateur [7];
 		
 	public UtilisateursDao() {
 		initListe();
 	}
 
 	private void initListe(){
-		listUtilisateurs.add(new Employe("Durand", "Paul", new Date(), "M", 1, "paul", "paul@durand"));
-		listUtilisateurs.add(new Employe("Duffour", "Pauline", new Date(), "F", 2, "pauline", "pauline@duffour"));
-		listUtilisateurs.add(new Adherent("Ali", "Mohamed", new Date(), "M", 3, "mohamed", "mohamed@ali"));
-		listUtilisateurs.add(new Adherent("Leroy", "Merlin", new Date(), "M", 4, "merlin", "merlin@leroy"));
-		listUtilisateurs.add(new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier"));
-		listUtilisateurs.add(new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint"));	
-		listUtilisateurs.add(new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne"));
+		utilisateurDB[0] = new Employe("Durand", "Paul", new Date(), "M", 1, "paul", "paul@durand");		
+		utilisateurDB[1] = new Employe("Duffour", "Pauline", new Date(), "F", 2, "pauline", "pauline@duffour");
+		utilisateurDB[2] = new Adherent("Ali", "Mohamed", new Date(), "M", 3, "mohamed", "mohamed@ali");
+		utilisateurDB[3] = new Adherent("Leroy", "Merlin", new Date(), "M", 4, "merlin", "merlin@leroy");
+		utilisateurDB[5] = new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier");
+		utilisateurDB[6] = new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint");	
+		utilisateurDB[7] = new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne");
 	}
 	
 	public Utilisateur findByKey(Integer id) throws BiblioException{
-		for(Utilisateur u : listUtilisateurs)	{
+		for(Utilisateur u : utilisateurDB)	{
 			if(u.getIdUtilisateur() == id){
 				return u;
 			}
@@ -38,45 +39,14 @@ public class UtilisateursDao {
 	}
 	
 	public List<Utilisateur> findAll(){
-		return listUtilisateurs;
-	}
-	
-	//liste des employés
-	public List<Employe> findAllEmployes(){
-		ArrayList<Employe> employes = new ArrayList<Employe>();
+		List<Utilisateur> utilisateursTrouves = new ArrayList<Utilisateur>();
 		
-		for(Utilisateur util : listUtilisateurs){
-			if(util instanceof Employe){
-				employes.add((Employe) util);
-			}
+		for(Utilisateur u : utilisateurDB){
+			utilisateursTrouves.add(u);
 		}
-		return employes;
-		
+		return utilisateursTrouves;
 	}
 	
-	//liste des adherents
-	public List<Adherent> findAllAdherents(){
-		ArrayList<Adherent> adherents = new ArrayList<Adherent>();
-		
-		for(Utilisateur util : listUtilisateurs){
-			if(util instanceof Adherent){
-				adherents.add((Adherent) util);
-			}
-		}
-		return adherents;
-		
-	}
-	
-	public void insert(Utilisateur util){
-		listUtilisateurs.add(util);
-	}
 
-	public int getIndexOflist(){
-		return listUtilisateurs.size();
-	}
-	
-	public int getNext(){
-		return getIndexOflist() + 1;
-	}
 	
 }
