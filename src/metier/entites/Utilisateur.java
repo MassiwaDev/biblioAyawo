@@ -9,16 +9,6 @@ public class Utilisateur extends Personne {
 	private String pwd;
 	private String pseudonyme;
 	
-	public ArrayList<EmpruntEnCours> getEmpruntEnCours() {
-		return empruntEnCours;
-	}
-
-
-	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours) {
-		this.empruntEnCours = empruntEnCours;
-	}
-
-
 	private ArrayList <EmpruntEnCours> empruntEnCours;
 	
 	
@@ -44,7 +34,10 @@ public class Utilisateur extends Personne {
 		return pseudonyme;
 	}
 
-
+	public ArrayList<EmpruntEnCours> getEmpruntEnCours() {
+		return empruntEnCours;
+	}
+	
 	public void setIdUtilisateur(int idUtilisateur) {
 		this.idUtilisateur = idUtilisateur;
 	}
@@ -59,6 +52,12 @@ public class Utilisateur extends Personne {
 		this.pseudonyme = pseudonyme;
 	}
 
+	
+
+
+	public void setEmpruntEnCours(ArrayList<EmpruntEnCours> empruntEnCours) {
+		this.empruntEnCours = empruntEnCours;
+	}
 
 	@Override
 	public int hashCode() {
@@ -97,8 +96,13 @@ public class Utilisateur extends Personne {
 	
 	
 	public void addEmpruntEnCours(EmpruntEnCours e) throws BiblioException{
-
+		
+		
 		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
+		if ( emprunts == null){
+			emprunts = new ArrayList<EmpruntEnCours>();
+			
+		}
 		emprunts.add(e);
 
 	}

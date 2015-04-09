@@ -18,12 +18,18 @@ public class EmpruntEnCours {
 	public void setExemplaire(Exemplaire exemplaire) {
 		this.exemplaire = exemplaire;
 	}
-
-	public EmpruntEnCours(Date dateEmprunt) {
-		super();
+	
+	public EmpruntEnCours(Utilisateur user, Exemplaire e, Date dateEmprunt ){
+		this.emprunteur = user;
+		this.exemplaire = e;
 		this.dateEmprunt = dateEmprunt;
 	}
-
+	public EmpruntEnCours(Utilisateur user, Exemplaire e){
+		this(user, e, new Date());
+		
+		
+	}
+	
 	public Date getDateEmprunt() {
 		return dateEmprunt;
 	}
