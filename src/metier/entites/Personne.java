@@ -12,6 +12,22 @@ public class Personne {
 	
 	
 	
+	public Personne() {
+	}
+	
+	
+	
+	public Personne(String nom, String prenom, Date dateNaissance, String sexe) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.sexe = sexe;
+	}
+
+
+
+
 	public String getNom() {
 		return nom;
 	}

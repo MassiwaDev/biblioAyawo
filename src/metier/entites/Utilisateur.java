@@ -1,6 +1,7 @@
 package metier.entites;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Utilisateur extends Personne {
 	
@@ -11,6 +12,19 @@ public class Utilisateur extends Personne {
 	private ArrayList <EmpruntEnCours> lesEmprunts;
 	
 	
+	
+	
+	public Utilisateur() {
+		super();
+	}
+
+
+	public Utilisateur(String nom, String prenom, Date dateNaissance,
+			String sexe) {
+		super(nom, prenom, dateNaissance, sexe);
+	}
+
+
 	public Utilisateur(int idUtilisateur, String pwd, String pseudonyme) {
 		super();
 		this.idUtilisateur = idUtilisateur;
