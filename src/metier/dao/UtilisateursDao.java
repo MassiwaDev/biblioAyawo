@@ -24,9 +24,9 @@ public class UtilisateursDao {
 		utilisateurDB[1] = new Employe("Duffour", "Pauline", new Date(), "F", 2, "pauline", "pauline@duffour");
 		utilisateurDB[2] = new Adherent("Ali", "Mohamed", new Date(), "M", 3, "mohamed", "mohamed@ali");
 		utilisateurDB[3] = new Adherent("Leroy", "Merlin", new Date(), "M", 4, "merlin", "merlin@leroy");
-		utilisateurDB[5] = new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier");
-		utilisateurDB[6] = new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint");	
-		utilisateurDB[7] = new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne");
+		utilisateurDB[4] = new Adherent("Tessier", "Franck", new Date(), "M", 5, "franck", "franck@tessier");
+		utilisateurDB[5] = new Adherent("Toussaint", "Brice", new Date(), "M", 6, "brice", "brice@toussaint");	
+		utilisateurDB[6] = new Adherent("LaMontagne", "Collette", new Date(), "F", 7, "collette", "collette@lamontagne");
 	}
 	
 	public Utilisateur findByKey(Integer id) throws BiblioException{
