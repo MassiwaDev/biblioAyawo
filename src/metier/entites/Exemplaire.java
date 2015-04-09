@@ -91,7 +91,7 @@ public class Exemplaire {
 	public String toString() {
 		return "Il s'agit de l'exemplaire : "+getTitre()+", idExemplaire :" + getIdExemplaire() + ", sa date d'achat est :"
 				+ getDateAchat() + " son statut est : " + getStatus() + ", son isbn est :" + getIsbn()
-				+ ". Il est actuellement : " + getEmpruntEnCours() + ".";
+				+".";
 	}
 	
 	
