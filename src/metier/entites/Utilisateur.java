@@ -72,6 +72,14 @@ public class Utilisateur extends Personne {
 	}
 	
 	
+	public void addEmpruntEnCours(EmpruntEnCours e) throws BiblioException{
+
+		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
+		emprunts.add(e);
+
+	}
+	
+	
 	
 	
 	
