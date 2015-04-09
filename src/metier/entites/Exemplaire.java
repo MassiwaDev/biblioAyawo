@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Exemplaire {
 	private int idExemplaire;
+	private String titre;
 	private Date dateAchat;
 	private EnumStatusExemplaire status;
 	private String isbn;
@@ -12,13 +13,27 @@ public class Exemplaire {
 	private EmpruntEnCours empruntEnCours;
 
 
-	public Exemplaire(int idExemplaire, Date dateAchat,
+
+
+
+	public Exemplaire(int idExemplaire, String titre, Date dateAchat,
 			EnumStatusExemplaire status, String isbn) {
 		super();
 		this.idExemplaire = idExemplaire;
+		this.titre = titre;
 		this.dateAchat = dateAchat;
 		this.status = status;
 		this.isbn = isbn;
+	}
+
+
+	public String getTitre() {
+		return titre;
+	}
+
+
+	public void setTitre(String titre) {
+		this.titre = titre;
 	}
 
 
@@ -74,7 +89,7 @@ public class Exemplaire {
 
 	@Override
 	public String toString() {
-		return "Il s'agit de l'exemplaire, idExemplaire :" + getIdExemplaire() + ", sa date d'achat est :"
+		return "Il s'agit de l'exemplaire : "+getTitre()+", idExemplaire :" + getIdExemplaire() + ", sa date d'achat est :"
 				+ getDateAchat() + " son statut est : " + getStatus() + ", son isbn est :" + getIsbn()
 				+ ". Il est actuellement : " + getEmpruntEnCours() + ".";
 	}
