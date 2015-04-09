@@ -8,7 +8,17 @@ public class EmpruntEnCours {
 	private Date dateEmprunt;
 
 	private Utilisateur emprunteur;
+	private Exemplaire exemplaire;
 	
+	
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
+	}
+
 	public EmpruntEnCours(Date dateEmprunt) {
 		super();
 		this.dateEmprunt = dateEmprunt;
@@ -33,7 +43,7 @@ public class EmpruntEnCours {
 
 	@Override
 	public String toString() {
-		return "L'exemplaire est actuellement emprunté par : "+getEmprunteur()+" depuis le : " + getDateEmprunt() + ".";
+		return "L'exemplaire : "+getExemplaire()+" est actuellement emprunté par : "+getEmprunteur()+" depuis le : " + getDateEmprunt() + ".";
 	}
 	
 	
