@@ -77,7 +77,32 @@ public class Adherent extends Utilisateur {
 		return nb;
 	}
 	
+@Override
+	public String toString() {
+		return super.toString() + " Adherent [telephone=" + telephone + "]";
+	}
 
+@Override
+public void addEmpruntEnCours(EmpruntEnCours e) throws BiblioException {
+	if (isConditionsPretAcceptees()) {
+		super.addEmpruntEnCours(e);		
+		} 
+	else
+		{
+		  if (getNbRetards() > 0){
+			  throw new BiblioException("Emprunt refusé au motif que l'adhérent a dépassé la date limite pour la restitution d'au moins un livre");
+			  
+		  } else {
+				ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
+				if (emprunts.size() == 3) {
+					throw new BiblioException("Emprunt refusé au motif que l'adhérent a emprunté le maximum de livres autorisés (3)");
+				}
+		  }
+		  
+		  
+		}
+
+}
 	
 }
 

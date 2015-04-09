@@ -5,6 +5,13 @@ import java.util.Date;
 public class Employe extends Utilisateur {
 	
 	
+	@Override
+	public String toString() {
+		return super.toString() + " Employe [codeMatricule=" + codeMatricule
+				+ ", categorieEmploye=" + categorieEmploye + "]";
+	}
+
+
 	private String codeMatricule;
 	private EnumCategorieEmploye categorieEmploye;
 	

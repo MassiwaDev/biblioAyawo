@@ -61,14 +61,46 @@ public class Utilisateur extends Personne {
 
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + idUtilisateur;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Utilisateur other = (Utilisateur) obj;
+		if (idUtilisateur != other.idUtilisateur)
+			return false;
+		return true;
+	}
+
+
+	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return super.toString();
+		return super.toString() + "idUtilisateur = " + idUtilisateur + "pseudonyme = " + pseudonyme;
 	}
 
 
 	public int getNbEmpruntsEnCours() {
 		return empruntEnCours.size();
+	}
+	
+	
+	public void addEmpruntEnCours(EmpruntEnCours e) throws BiblioException{
+
+		ArrayList<EmpruntEnCours> emprunts = getEmpruntEnCours();
+		emprunts.add(e);
+
 	}
 	
 	
