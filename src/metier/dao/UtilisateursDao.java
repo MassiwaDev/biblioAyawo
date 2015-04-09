@@ -38,6 +38,7 @@ public class UtilisateursDao {
 		throw new BiblioException("Utilisateur non trouvé !");
 	}
 	
+	//Liste de tous les utilisateurs
 	public List<Utilisateur> findAll(){
 		List<Utilisateur> utilisateursTrouves = new ArrayList<Utilisateur>();
 		
