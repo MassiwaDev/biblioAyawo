@@ -1,5 +1,7 @@
 package metier.entites;
 
+import java.util.Date;
+
 public class Employe extends Utilisateur {
 	
 	
@@ -7,15 +9,15 @@ public class Employe extends Utilisateur {
 	private EnumCategorieEmploye categorieEmploye;
 	
 	
-	public Employe(int idUtilisateur, String pwd, String pseudonyme) {
-		super(idUtilisateur, pwd, pseudonyme);
+	public Employe(String nom, String prenom, Date dateNaissance, String sexe, int idUtilisateur, String pwd, String pseudonyme) {
+		super(nom, prenom,dateNaissance, sexe, idUtilisateur, pwd, pseudonyme);
 		
 	}
 
 
-	public Employe(int idUtilisateur, String pwd, String pseudonyme,
+	public Employe(String nom, String prenom, Date dateNaissance, String sexe, int idUtilisateur, String pwd, String pseudonyme,
 			String codeMatricule, EnumCategorieEmploye categorieEmploye) {
-		super(idUtilisateur, pwd, pseudonyme);
+		super(nom, prenom,dateNaissance, sexe, idUtilisateur, pwd, pseudonyme);
 		this.codeMatricule = codeMatricule;
 		this.categorieEmploye = categorieEmploye;
 	}

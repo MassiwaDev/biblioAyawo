@@ -1,5 +1,7 @@
 package metier.entites;
 
+import java.util.Date;
+
 public class Adherent extends Utilisateur {
 
 	private String telephone;
@@ -7,16 +9,14 @@ public class Adherent extends Utilisateur {
 	private static int dureeMaxPret = 15;
 	
 	
-
-	
-	public Adherent(int idUtilisateur, String pwd, String pseudonyme) {
-		super(idUtilisateur, pwd, pseudonyme);
+	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, int idUtilisateur, String pwd, String pseudonyme) {
+		super(nom, prenom, dateNaissance, sexe, idUtilisateur, pwd, pseudonyme);
 		
 	}
 
-	public Adherent(int idUtilisateur, String pwd, String pseudonyme,
+	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, int idUtilisateur, String pwd, String pseudonyme,
 			String telephone) {
-		super(idUtilisateur, pwd, pseudonyme);
+		super(nom, prenom, dateNaissance, sexe, idUtilisateur, pwd, pseudonyme);
 		this.telephone = telephone;
 	}
 
@@ -34,3 +34,4 @@ public class Adherent extends Utilisateur {
 
 	
 }
+

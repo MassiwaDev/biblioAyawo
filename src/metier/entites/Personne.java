@@ -1,5 +1,7 @@
 package metier.entites;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Personne {
@@ -8,26 +10,31 @@ public class Personne {
 	private String prenom;
 	private Date dateNaissance;
 	private String sexe;
+	public static final java.text.SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
 	
-	
-	
-	
-	public Personne() {
+	public Personne(String nom, String prenom) throws ParseException {	
+		this(nom, prenom, sdf.parse("01/01/0001"));
 	}
 	
+	public Personne(String nom, String prenom, Date dateNaissance) {	
+		this(nom, prenom, dateNaissance, "NC");
+	}
 	
-	
+
+
+
 	public Personne(String nom, String prenom, Date dateNaissance, String sexe) {
-		super();
+		
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.sexe = sexe;
+		
 	}
-
-
-
-
+	
+	
+	
 	public String getNom() {
 		return nom;
 	}
@@ -110,3 +117,5 @@ public class Personne {
 	
 
 }
+
+
