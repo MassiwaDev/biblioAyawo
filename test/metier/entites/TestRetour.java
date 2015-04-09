@@ -43,9 +43,14 @@ public class TestRetour {
 		ad1.getEmpruntEnCours().remove(empruntEncours1);
 		EmpruntArchive empruntArchive1 = new EmpruntArchive(new Date(), empruntEncours1.getDateEmprunt());
 		empruntArchive1.setEmprunteur(empruntEncours1.getEmprunteur());
-		empruntArchive1.setExemplaire(empruntEncours1.getExemplaire());		
+		empruntArchive1.setExemplaire(empruntEncours1.getExemplaire());	
+		
+		//empruntEncours1 = null;
+		empruntEncours1.setEmprunteur(null);
+		empruntEncours1.setExemplaire(null);
 		empruntEncours1 = null;
 		System.out.println(empruntArchive1);
+		System.out.println(empruntEncours1);
 	}
 
 }
