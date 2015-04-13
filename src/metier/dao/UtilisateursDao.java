@@ -14,14 +14,18 @@ import metier.entites.Utilisateur;
 
 public class UtilisateursDao {
 	
-	//private List <Utilisateur> listUtilisateurs = new ArrayList<Utilisateur>();
+	/** déclaration d'un tableau de 7 utilisateurs  */
 	private Utilisateur [] utilisateurDB = new Utilisateur [7];
+	
+	/** déclaration du formatage des dates --dd/MM/yyyy-- */
 	public static final java.text.SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
+	
+	
 	public UtilisateursDao() {
 		initListe();
 	}
 
+	/** Methode de remplissage du tableau avec 2 Employés et 5 adhérents */
 	private void initListe(){
 
 		try {
@@ -38,6 +42,7 @@ public class UtilisateursDao {
 		
 	}
 	
+	/** Methode permettant d'obtenir un utilisateur par son id */
 	public Utilisateur findByKey(Integer id) throws BiblioException{
 		for(Utilisateur u : utilisateurDB)	{
 			if(u.getIdUtilisateur() == id){
@@ -47,7 +52,7 @@ public class UtilisateursDao {
 		throw new BiblioException("Utilisateur non trouvé !");
 	}
 	
-	//---Liste de tous les utilisateurs enregistrés ----
+	/** Methode permettant d'obtenir la liste de tous les utilisateurs */
 	public List<Utilisateur> findAll(){
 		List<Utilisateur> utilisateursTrouves = new ArrayList<Utilisateur>();
 		

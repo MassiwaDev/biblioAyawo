@@ -10,9 +10,13 @@ import metier.entites.BiblioException;
 import metier.entites.EnumStatusExemplaire;
 import metier.entites.Exemplaire;
 
+
 public class ExemplairesDao {
 	
+	/** déclaration d'un tableau de 5 exemplaires de livre  */
 	private Exemplaire [] exemplaireDB = new Exemplaire [5];
+	
+	/** déclaration du formatage des dates --dd/MM/yyyy-- */
 	public static final java.text.SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	
@@ -20,6 +24,7 @@ public class ExemplairesDao {
 		initListe();
 	}
 
+	/** Methode de remplissage du tableau avec 5 exemplaires */
 	private void initListe(){	
 		try {
 			exemplaireDB [0] = new Exemplaire(1, "Les volcans d'Asie", sdf.parse("12/12/2010"), EnumStatusExemplaire.DISPONIBLE, "2-86889-006-7");
@@ -34,7 +39,7 @@ public class ExemplairesDao {
 				
 	}
 	
-	
+	/** Methode permettant d'obtenir un exemplaire par son id */
 	public Exemplaire findByKey(Integer id) throws BiblioException{
 		for(Exemplaire e : exemplaireDB)	{
 			if(e.getIdExemplaire() == id){
@@ -44,6 +49,7 @@ public class ExemplairesDao {
 		throw new BiblioException("Exemplaire non trouvé !");
 	}
 	
+	/** Methode permettant d'obtenir la liste de tous les exemplaires */
 	public List<Exemplaire> findAll(){
 		List<Exemplaire> exemplairesTrouves = new ArrayList<Exemplaire>();
 		for (Exemplaire exp : exemplaireDB){
