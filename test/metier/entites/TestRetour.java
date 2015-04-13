@@ -46,8 +46,8 @@ public class TestRetour {
 		empruntArchive1.setExemplaire(empruntEncours1.getExemplaire());	
 		
 		//empruntEncours1 = null;
-		empruntEncours1.setEmprunteur(null);
-		empruntEncours1.setExemplaire(null);
+		/*empruntEncours1.setEmprunteur(null);
+		empruntEncours1.setExemplaire(null);*/
 		empruntEncours1 = null;
 		System.out.println(empruntArchive1);
 		System.out.println(empruntEncours1);
