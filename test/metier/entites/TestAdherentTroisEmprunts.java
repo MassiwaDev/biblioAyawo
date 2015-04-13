@@ -34,6 +34,7 @@ public class TestAdherentTroisEmprunts {
 		
 		
 		// Instanciation de la classe UtilisateursDao
+		
 		System.out.println();
 		System.out.println( "\n------------------------------------------------------");
 		System.out.println ("Utilisation de la classe UtilisateursDao()");
@@ -70,7 +71,7 @@ public class TestAdherentTroisEmprunts {
 		System.out.println ("AJOUT D'un 4 EME EMPRUNT A l'ADHERENT");
 		System.out.println();
 		
-		EmpruntEnCours ep4, ep5;
+		EmpruntEnCours ep4;
 		
 		try {
 			
